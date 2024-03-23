@@ -27,7 +27,7 @@ const Home = (props) => {
     } else {
       if (ID) {
         axios
-          .get(`http://localhost:3000/getPrice/${ID}`)
+          .get(`https://scale-x.onrender.com/getPrice/${ID}`)
           .then((res) => {
             // console.log(res.data);
             setData(res.data);

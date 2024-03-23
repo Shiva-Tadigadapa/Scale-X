@@ -59,7 +59,7 @@ const DataInput = () => {
     e.preventDefault();
   
     try {
-      const response = await axios.post("http://localhost:3000/pairs", pair);
+      const response = await axios.post("https://scale-x.onrender.com/pairs", pair);
       console.log(response);
   
       // Check if the response status is OK (2xx range)

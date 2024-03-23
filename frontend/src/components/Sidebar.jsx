@@ -18,7 +18,7 @@ export const Sidebar = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/get-tokenlist");
+      const response = await axios.get("https://scale-x.onrender.com/get-tokenlist");
       console.log(response.data);
       setBaseTokenNames(response.data);
     } catch (error) {

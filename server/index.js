@@ -5,11 +5,12 @@ dotenv.config();
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 
-
 const app = express();
 app.use(bodyParser.json()); // Parse JSON request bodies
-app.use(cors());
-const port = 3000;
+app.use(cors({
+    origin: ['http://localhost:3000', 'https://scale-x.onrender.com', 'https://scale-x.vercel.app']
+}));
+// const port = 3000;
 import router from './routes/route.js';
 
 app.use('/', router);
@@ -24,7 +25,6 @@ const connectWithRetry = () => {
     });
 };
 
-
 connectWithRetry();
 
-app.listen(port, () => console.log(`yowamio listening on port ${port}! 🔥`));
+// app.listen(port, () => console.log(`yowamio listening on port ${port}! 🔥`));
